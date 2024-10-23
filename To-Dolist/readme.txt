@@ -1,5 +1,6 @@
 Ejercicio 1: Crear una API RESTful Básica con Flask
-Objetivo: Crear una API RESTful sencilla que permita gestionar una lista de tareas pendientes (To-Do list). La API deberá ser capaz de:
+Objetivo: Crear una API RESTful sencilla que permita gestionar una lista de tareas pendientes (To-Do list). 
+La API deberá ser capaz de:
 
 Obtener todas las tareas (GET /tasks).
 Añadir una nueva tarea (POST /tasks).
