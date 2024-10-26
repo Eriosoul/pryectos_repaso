@@ -20,4 +20,19 @@ def new_prod():
     }
     products.append(nuevo_prod)
     print(products)
+
 new_prod()
+
+
+def kit_prod():
+    print(products)
+    num_elim = input(str("Introduce el id que deseas eliminar: "))
+    print(f"Ha selecionado el {num_elim} ",)
+    opcion = input("¿Es correcto?  Y(Si)/N(no)").title()
+    print(opcion)
+    if opcion == "Y":
+        print("Se elminino correctamente")
+    else:
+        print("No se elemino nada")
+
+kit_prod()
