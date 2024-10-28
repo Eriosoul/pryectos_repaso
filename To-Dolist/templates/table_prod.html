@@ -1,0 +1,26 @@
+import products 
+
+{% extends "base.html" %}
+
+{% block content %}
+  <table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>title</th>
+        <th>description</th>
+        <th>done</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for prod in products %}
+        <tr>
+          <td>{{ prod.id }}</td>
+          <td>{{ prod.title }}</td>
+          <td>{{ prod.description }}</td>
+          <td>{{ prod.done }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
