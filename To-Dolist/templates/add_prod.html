@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form method="POST">
+        <label for="fname">Nombre del producto:</label><br>
+        <input type="text" id="fname" name="title"><br>
+        <label for="lname">Descripcion del producto:</label><br>
+        <input type="text" id="lname" name="description"><br>
+        <label for="lname">Terminada la tarea:</label><br>
+        <input type="text" id="lname" name="done"><br>
+        <!-- <input type="radio" id="html" name="done" value="True">
+        <label for="html">Terminado</label><br>
+        <input type="radio" id="css" name="done" value="False">
+        <label for="css">No terminado</label><br><br> -->
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}
