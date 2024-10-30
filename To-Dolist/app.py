@@ -31,24 +31,25 @@ def new_products():
         return redirect(url_for('product'))
     return render_template('add_prod.html', title='Add new Product')
 
-@app.route('/upd_prod',  methods=['POST', 'GET'])
+@app.route('/upd_prod', methods=['POST', 'GET'])
 def upd_product():
     if request.method == "POST":
-        id = request.form['id']
-        if product['id'] == id:
-            title = request.form['title']
-            description = request.form['description']
-            done = request.form['done']
-            nuevo_id = products[-1]['id'] + 1 if products else 1
-            nuevo_prod = {
-                'id': nuevo_id,
-                'title': title,
-                'description': description,
-                'done': done
-            }
-            products.append(nuevo_prod)
-            return redirect(url_for('update_prod'))
-    return render_template('update_prod.html', title='Bootstrap Table', products=products)
+        prod_id = int(request.form['id'])
+        title = request.form.get('title')
+        description = request.form.get('description')
+        done = request.form.get('done')
+
+        # Busca el producto en la lista de productos y actualízalo
+        for product in products:
+            if product['id'] == prod_id:
+                product['title'] = title
+                product['description'] = description
+                product['done'] = done
+                break
+
+        return redirect(url_for('upd_product'))
+    
+    return render_template('update_prod.html', title='Editar Producto', products=products)
 
     
 if __name__ == '__main__':
