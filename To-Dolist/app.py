@@ -51,6 +51,25 @@ def upd_product():
     
     return render_template('update_prod.html', title='Editar Producto', products=products)
 
+
+@app.route('/del_prod', methods=['POST', 'GET'])
+def del_product():
+    if request.method == "POST":
+        prod_id = int(request.form['id'])
+        title = request.form.get('title')
+        description = request.form.get('description')
+        done = request.form.get('done')
+
+        # Busca el producto en la lista de productos y actualízalo
+        for product in products:
+            if product['id'] == prod_id:
+                product.delete(prod_id)
+                break
+
+        return redirect(url_for('upd_product'))
+    
+    return render_template('delete_prod.html', title='Editar Producto', products=products)
+
     
 if __name__ == '__main__':
     app.run(debug=True, port=4000)

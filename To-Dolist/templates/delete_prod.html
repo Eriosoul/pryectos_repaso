@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Done</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for prod in products %}
+        <tr>
+          <form method="POST" action="{{ url_for('upd_product') }}">
+            <td>{{ prod.id }}</td>
+            <td>{{ prod.title }}</td>
+            <td>{{ prod.description }}</td>
+            <td>{{ prod.done }}</td>
+          </form>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  
+  <form method="POST" action="{{ url_for('upd_product') }}">
+    <label for="id">ID del producto:</label>
+    <input type="text" name="id" id="id"><br>
+    <button type="submit">Guardar cambios</button>
+  </form>
+{% endblock %}
