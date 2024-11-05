@@ -56,9 +56,6 @@ def upd_product():
 def del_product():
     if request.method == "POST":
         prod_id = int(request.form['id'])
-        title = request.form.get('title')
-        description = request.form.get('description')
-        done = request.form.get('done')
 
         # Busca el producto en la lista de productos y actualízalo
         for product in products:
