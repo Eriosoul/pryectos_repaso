@@ -33,8 +33,6 @@ class DataBaseBook:
                 print("La tabla 'books' no existe. Creando tabla...")
                 for _ in tqdm(range(50), desc="Creando tabla 'books'", unit="iter"):
                     pass
-                # Aquí define el método para crear la tabla
-                # self.create_table_books()
 
     def close_connection(self):
         if self.conn and self.conn.is_connected():
