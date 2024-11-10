@@ -37,7 +37,7 @@ def main():
     s = Sumatorio()
     while True: 
         try:
-            a, b = s.get_numb()  # Obtener los números correctamente
+            a, b = s.get_numb()
             operacion = input("Selecciona una de estas opciones ->  + , - , * , /\n")
             if operacion == "+":
                 s.sumar(a, b)
