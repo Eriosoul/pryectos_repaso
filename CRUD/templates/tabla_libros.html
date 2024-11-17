@@ -1,0 +1,37 @@
+{% extends "index.html" %}
+
+{% block content %}
+  <h1>Lista de libros</h1>
+  <table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>title</th>
+        <th>author</th>
+        <th>published_date</th>
+        <th>genre</th>
+        <th>price</th>
+        <th>update</th>
+        <th>delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for prod in products %}
+        <tr>
+          <td>{{ prod.id }}</td>
+          <td>{{ prod.title }}</td>
+          <td>{{ prod.author }}</td>
+          <td>{{ prod.published_date }}</td>
+          <td>{{ prod.genre }}</td>
+          <td>{{ prod.price }} €</td>
+          <td>
+            <a href="/edit_book/{{ prod.id }}" class="btn btn-warning">Update</a>
+          </td>
+          <td>
+            <a href="/form_delete_books/{{ prod.id }}" class="btn btn-danger">Delete</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

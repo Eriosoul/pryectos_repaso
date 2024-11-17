@@ -1,0 +1,18 @@
+{% extends "index.html" %}
+
+{% block content %}
+<h1>Eliminar Libro</h1>
+<p>¿Estás seguro de que deseas eliminar este libro?</p>
+<ul>
+    <li><strong>ID:</strong> {{ book.id }}</li>
+    <li><strong>Título:</strong> {{ book.title }}</li>
+    <li><strong>Autor:</strong> {{ book.author }}</li>
+    <li><strong>Fecha de Publicación:</strong> {{ book.published_date }}</li>
+    <li><strong>Género:</strong> {{ book.genre }}</li>
+    <li><strong>Precio:</strong> {{ book.price }} €</li>
+</ul>
+<form method="POST" action="/delete_book/{{ book.id }}">
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a href="/get_books" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}

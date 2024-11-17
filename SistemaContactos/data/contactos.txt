@@ -1,0 +1,2 @@
+nombre,apellidos,telefono,email
+andrei,uzumaki,123456789,ejemplo@gmail.com

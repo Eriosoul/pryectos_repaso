@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="container">
+  <h1>Lista de libros</h1>
+  <div class="row">
+    {% for prod in products %}
+    <div class="col-md-4">
+      <div class="card mb-4" style="width: 18rem;">
+        <img class="card-img-top" src="{{ url_for('static', filename='img/mh.jpg') }}" alt="Imagen de {{ prod.title }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ prod.title }}</h5>
+          <p class="card-text"><strong>Autor:</strong> {{ prod.author }}</p>
+          <p class="card-text"><strong>Género:</strong> {{ prod.genre }}</p>
+          <p class="card-text"><strong>Publicado:</strong> {{ prod.published_date }}</p>
+          <p class="card-text"><strong>Precio:</strong> {{ prod.price }} €</p>
+          <a href="/edit_book/{{ prod.id }}" class="btn btn-warning">Editar</a>
+          <a href="/form_delete_books/{{ prod.id }}" class="btn btn-danger">Eliminar</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

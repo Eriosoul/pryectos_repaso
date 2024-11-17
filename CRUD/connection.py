@@ -49,6 +49,25 @@ class DataBaseBook:
         except Error as ex:
             print("Error al obtener datos:", ex)
             return None
+        
+    def get_all_books(self):
+        try:
+            cursor = self.conn.cursor(dictionary=True)  # Devuelve los resultados como diccionarios
+            cursor.execute('SELECT * FROM books')
+            books = cursor.fetchall()
+            cursor.close()
+            return books
+        except Error as ex:
+            print("Error al obtener datos:", ex)
+            return []
+    
+    def add_new_books(self):
+        try:
+            cursor = self.conn.cursor(dictionary=True)
+            cursor.execute("INSERT INTO Customers (title, author, published_date, genre, price) VALUES ('El Señor de los Anillos', 'J. R. R. Tolkien', '1954-06-29', 'Ficcion', '66.45')")
+            print("Libro añadido correctamente")
+        except Error as ex:
+            print("Error al intorducir los datos:", ex)
 
 def test_db():
     db = DataBaseBook()
