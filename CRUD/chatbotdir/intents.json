@@ -1,0 +1,48 @@
+{
+  "intents": [
+    {
+      "tag": "greetings",
+      "patterns": ["Hola", "¿Cómo estás?", "Buenos días", "Hey"],
+      "responses": ["¡Hola! ¿Cómo puedo ayudarte?", "¡Hola! Espero que estés teniendo un gran día."]
+    },
+    {
+      "tag": "despedida",
+      "patterns": ["Adiós", "Nos vemos", "Hasta luego", "Chao"],
+      "responses": ["¡Adiós! Que tengas un buen día.", "Hasta luego, ¡cuídate!"]
+    },
+    {
+      "tag": "ayuda",
+      "patterns": ["¿Cómo funciona esto?", "Necesito ayuda", "¿Qué puedes hacer?", "/help"],
+      "responses": [
+        "Soy un chatbot especializado en libros. Puedes pedirme cosas como:\n\n1. Consultar el precio de un libro (por ejemplo, '¿Cuánto cuesta El Hobbit?').\n2. Listar libros de un género específico (por ejemplo, 'Dime los libros de fantasía').\n3. Obtener una lista de libros de un autor (por ejemplo, 'Dime los libros de J. R. R. Tolkien').\n\nAdemás, puedo darte recomendaciones personalizadas según tus gustos. Intenta decirme algo como 'Recomiéndame libros de fantasía'."
+      ]
+    },
+    {
+      "tag": "consulta_precio",
+      "patterns": ["¿Cuánto cuesta *El Hobbit*?", "Dime el precio de *El señor de los anillos*", "¿Qué vale *Invisible*?"],
+      "responses": ["Buscando el precio de ese libro..."]
+    },
+    {
+      "tag": "consulta_genero",
+      "patterns": ["Dime los libros de fantasía", "¿Qué libros tienes de LIJ?", "Libros de género Alta Fantasía"],
+      "responses": ["Aquí están los libros del género que me pediste:"]
+    },
+    {
+      "tag": "consulta_autor",
+      "patterns": ["Dime los libros de J. R. R. Tolkien", "¿Qué libros tiene Harper Lee?", "Lista de libros de Reyes"],
+      "responses": ["Buscando los libros de ese autor..."]
+    },
+    {
+      "tag": "recomendaciones",
+      "patterns": ["Recomiéndame libros de fantasía", "¿Qué libros me recomiendas de LIJ?", "Dame recomendaciones de Alta Fantasía"],
+      "responses": [
+        "Aquí tienes algunas recomendaciones basadas en tus gustos:\n1. 'El señor de los anillos' de J. R. R. Tolkien.\n2. 'El Hobbit' de J. R. R. Tolkien.\n3. 'Alas de sangre' de Rebecca Yarros."
+      ]
+    },
+    {
+      "tag": "unknown",
+      "patterns": [],
+      "responses": ["Lo siento, no entiendo tu pregunta.", "¿Podrías reformularla?"]
+    }
+  ]
+}
