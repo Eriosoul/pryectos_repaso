@@ -120,6 +120,10 @@ if db:
             return "Libro eliminado correctamente", 200
         except Exception as e:
             return f"Error al eliminar el libro: {e}", 500
+    
+    @app.route('/chat')
+    def chat():
+        return render_template('chat_bot.html', title="Chat Bot")
 
 if __name__ == '__main__':
     try:
